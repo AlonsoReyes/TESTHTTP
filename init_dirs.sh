@@ -11,8 +11,8 @@ echo "			Creating necessary directories!			"
 # echo "W Values:"
 # echo "${W_CONFIG[@]}"
 
-mkdir -p ${resultsDIR}consumption/client_raw
-mkdir -p ${resultsDIR}consumption/server_raw
+#mkdir -p ${resultsDIR}consumption/client_raw
+#mkdir -p ${resultsDIR}consumption/server_raw
 mkdir -p ${resultsDIR}consumption/client_csv
 mkdir -p ${resultsDIR}consumption/server_csv
 

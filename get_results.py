@@ -23,29 +23,19 @@ def req_parse(t):
 	return float(t)
 
 
-def standard_deviation(lst, population=True):
-    """Calculates the standard deviation for a list of numbers."""
+def standard_deviation(lst):
     num_items = len(lst)
     mean = sum(lst) / float(num_items)
     differences = [x - mean for x in lst]
     sq_differences = [d ** 2 for d in differences]
     ssd = sum(sq_differences)
- 
-    # Note: it would be better to return a value and then print it outside
-    # the function, but this is just a quick way to print out the values along
-    # the way.
-    if population is True:
-        #print('This is POPULATION standard deviation.')
-        variance = ssd / num_items
-    else:
-        #print('This is SAMPLE standard deviation.')
-        variance = ssd / (num_items - 1)
+    variance = ssd / num_items
     sd = sqrt(variance)
     return mean, sd
 
 
 #Returns list with 'W','M','avg_cpu', 'dev_cpu', 'avg_mem', 'dev_mem', 'avg_time'
-def topResults(infile='cl_top', W=8, M=100):
+def topResults(infile='cl_top', W=8, M=100, n_runs=10.0):
 	cpu = list()
 	mem = list()
 	time = list()
@@ -67,7 +57,7 @@ def topResults(infile='cl_top', W=8, M=100):
 
 	#This is because the server was ran once for the 10 iterations each configuration was tested
 	if infile == 'srv_top':
-		time_mean = time_mean / 10.0
+		time_mean = time_mean / n_runs
 
 	row = [W, M, float(format(cpu_mean, '7.4f')), float(format(cpu_std, '7.4f')), float(format(mem_mean, '7.4f')),
 	 float(format(mem_std, '7.4f')), float(format(time_mean, '7.4f'))]

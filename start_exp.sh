@@ -38,6 +38,7 @@ if [[ $? -ne 0 ]] ; then
 	exit 1
 fi
 
+${grenobleDIR}check_results.sh
 #${grenobleDIR}filter_consumption.sh
 
 #TODO GET RESULTS
