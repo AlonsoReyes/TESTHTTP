@@ -39,6 +39,8 @@ if [[ $? -ne 0 ]] ; then
 fi
 
 ${grenobleDIR}check_results.sh
+
+python3 ${grenobleDIR}get_results.py
 #${grenobleDIR}filter_consumption.sh
 
 #TODO GET RESULTS
