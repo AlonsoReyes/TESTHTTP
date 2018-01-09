@@ -88,7 +88,7 @@ do
 	END_EPOCH="$(date +%s)"
 
 	${grenobleResults}clean_files.sh -f ${consumptionDIR}a8-${clientNode}.oml -w 16 -m ${mcnf} -b $INIT_EPOCH -e $END_EPOCH -d "${grenobleResults}consumption/client_csv/"
-	${grenobleResults}clean_files.sh -f ${consumptionDIR}a8-${serverNode}.oml -w ${wcnf} -m ${mcnf} -b $INIT_EPOCH -e $END_EPOCH -d "${grenobleResults}consumption/server_csv/"
+	${grenobleResults}clean_files.sh -f ${consumptionDIR}a8-${serverNode}.oml -w 16 -m ${mcnf} -b $INIT_EPOCH -e $END_EPOCH -d "${grenobleResults}consumption/server_csv/"
 		
 done
 

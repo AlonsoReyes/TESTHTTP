@@ -24,7 +24,7 @@ done
 
 CSV_FILE="${CSV_DIR}W${W}_M${M}.csv"
 #echo "$CSV_DIR"
- echo "			W${W}_M${M} INIT_EPOCH=$INIT_EPOCH -- END_EPOCH=$END_EPOCH			"
+echo "			W${W}_M${M} INIT_EPOCH=$INIT_EPOCH -- END_EPOCH=$END_EPOCH			"
 
 SEARCH=$(awk -F $'\t' -v a="$END_EPOCH" '$4>=a' $OML_FILE)
 
