@@ -30,6 +30,6 @@ sleep 30
 ssh ${USER}@${SITE}.iot-lab.info "$START_COMM"
 
 cd results
-sftp ${USER}@${SITE}.iot-lab.info:/senslab/users/${USER}/A8/results/ <<< $'get A8_http2_client.csv \n get A8_http2_server.csv \n get -r cl_top \n get -r srv_top \n get -r cl_req \n get -r consumption/client_csv \n get -r consumption/server_csv'
+sftp ${USER}@${SITE}.iot-lab.info:/senslab/users/${USER}/A8/results/ <<< $'get A8http2_client.csv \n get A8http2_server.csv \n get -r cl_top \n get -r srv_top \n get -r cl_req \n get -r consumption/client_csv \n get -r consumption/server_csv'
 
 

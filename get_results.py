@@ -94,14 +94,13 @@ def getResults(side='client'):
 	reqdir = 'cl_req'
 	consdir = 'client_csv'
 	row =list()
+	header = ['W', 'M', 'AVG_CPU', 'DEV_CPU', 'AVG_MEM', 'DEV_MEM', 'AVG_TIME', 'AVG_REQ_TIME', 'MEAN_POWER']
+	if side == 'server':
+		header = ['W', 'M', 'AVG_CPU', 'DEV_CPU', 'AVG_MEM', 'DEV_MEM', 'AVG_TIME', 'MEAN_POWER']
+		topdir = 'srv_top'
+		consdir = 'server_csv'
 	with open('A8http2_{}.csv'.format(side), 'w', newline='\n', encoding='utf-8',) as csvfile:
-		header = ['W', 'M', 'AVG_CPU', 'DEV_CPU', 'AVG_MEM', 'DEV_MEM', 'AVG_TIME', 'AVG_REQ_TIME', 'MEAN_POWER']
 		writer = csv.writer(csvfile, delimiter=',')
-		if side == 'server':
-			header = ['W', 'M', 'AVG_CPU', 'DEV_CPU', 'AVG_MEM', 'DEV_MEM', 'AVG_TIME', 'MEAN_POWER']
-			topdir = 'srv_top'
-			consdir = 'server_csv'
-
 		#append header
 		writer.writerow(header)
 		
